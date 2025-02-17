@@ -29,6 +29,7 @@ import AdminRoute from "./AdminRoute";
 import UpComingmeals from "../components/UpComingmeals";
 import Room from "../components/Room";
 import RoomaddForm from "../Admin/RoomaddForm";
+import ErrorPage from "../Page/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -210,4 +211,8 @@ export const router = createBrowserRouter([
     path: "payment",
     element: <Payment />,
   },
+  {
+    path:'*',
+    element: <ErrorPage />
+  }
 ]);

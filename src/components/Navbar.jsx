@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbar px-20 fixed z-0 text-gray-700   md:bg-gray-200/20   md:bg-opacity-50 ">
+      <div className="navbar px-20 fixed z-0 text-gray-800   md:bg-gray-200/20   md:bg-opacity-50 ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden">

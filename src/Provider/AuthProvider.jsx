@@ -41,7 +41,14 @@ function AuthProvider({ children }) {
   };
   // update user info
 
-  const updateUserInfo = (name, photo) => {
+  const updateUserInfo = async (name, photo) => {
+    // await axiosPublic.post(`/users/${user?.email}`, {
+    //   name: user?.displayName,
+    //   image: user?.photoURL,
+    //   email: user?.email,
+    //   badge: "Bronze",
+    //   // status:
+    // });
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -72,7 +79,7 @@ function AuthProvider({ children }) {
           badge: "Bronze",
           // status:
         });
-      
+
         const userInfo = { email: currentUser?.email };
         axiosPublic.post("/jwt", userInfo).then((res) => {
           if (res.data?.token) {

@@ -8,7 +8,7 @@ function Blog() {
        <Helmet>
         <title> Hostel Management | Blog</title>
       </Helmet>
-      <div>
+      <div className="mt-28 w-11/12 mx-auto">
         <section class="text-center mb-10">
           <h1 class="text-4xl font-bold text-gray-800">Hostel News & Insights</h1>
           <p class="text-gray-600 mt-4 text-lg">
@@ -127,7 +127,7 @@ function Blog() {
       </div>
       {/* blog card */}
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-20 w-11/12 mx-auto">
         <div class="bg-gray-100 p-6 rounded-lg shadow-md">
           <div class="flex items-center mb-4">
             <svg

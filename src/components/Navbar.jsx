@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbar px-20 ">
+      <div className="navbar px-20 fixed z-0 text-gray-700   md:bg-gray-200/20   md:bg-opacity-50 ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden">
@@ -89,7 +89,7 @@ function Navbar() {
             to="/"
             className="text-2xl font-semibold flex items-center gap-3 lg:ml-2 md:mr-5"
           >
-            <HiBadgeCheck /> HOSTEL <span className="text-pink-500">GRUB</span>
+            <HiBadgeCheck /> <span className="text-green-700 font-semibold">HOSTEL</span> <span className="text-amber-500 font-semibold">GRUB</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -167,13 +167,13 @@ function Navbar() {
               <div className="flex gap-3 mt-3 hidden md:block lg:block">
                 <Link
                   to="/login"
-                  className="border-2 btn btn-sm text-blue-900 font-semibold text-md"
+                  className="btn btn-sm mr-2 bg-green-100 text-gray-900 font-semibold text-md rounded-full shadow-lg hover:bg-gray-900 hover:text-white transition duration-300"
                 >
                   Sign in
                 </Link>
                 <Link
                   to="/registration"
-                  className="border-2 btn btn-sm text-blue-900 font-semibold text-md px-2"
+                  className="btn btn-sm mr-2 bg-green-100 text-gray-900 font-semibold text-md rounded-full shadow-lg hover:bg-gray-900 hover:text-white transition duration-300"
                 >
                   Register
                 </Link>

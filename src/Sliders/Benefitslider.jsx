@@ -1,53 +1,45 @@
-import React from 'react';
-import one from '../assets/benefitse.jpg';
+import React from "react";
+import { CheckCircle, ShieldCheck, Clock } from "lucide-react";
 
-export default function Benefitslider() {
+export default function WhyChooseUs() {
+  const benefits = [
+    {
+      icon: <CheckCircle className="w-10 h-10 text-green-500" />,
+      title: "Reliable Service",
+      description: "Our system ensures smooth hostel management with 24/7 reliability.",
+    },
+    {
+      icon: <ShieldCheck className="w-10 h-10 text-blue-500" />,
+      title: "Secure & Safe",
+      description: "We prioritize safety with secure resident profiles and monitoring.",
+    },
+    {
+      icon: <Clock className="w-10 h-10 text-yellow-500" />,
+      title: "Fast Processing",
+      description: "Automated processes save time for room allocation and payments.",
+    },
+  ];
+
   return (
-    <div className="my-12">
-      <div
-        className="hero min-h-screen p-4 border rounded-lg hover:shadow-lg transition-shadow "
-       
-      >
-        <div className="hero-content flex-col lg:flex-row">
-          {/* Image Section */}
-          <img
-            src={one}
-            className="max-w-md h-96 rounded-lg shadow-2xl"
-            alt="Hostel Management"
-          />
+    <div className="py-12 my-12">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-gray-900">Why Choose Us?</h2>
+        <p className="text-gray-600 mt-2">
+          Discover why our hostel management system is the best choice.
+        </p>
 
-          {/* Text Section */}
-          <div className="lg:pl-12">
-            <h1 className="text-5xl font-bold flex items-center">
-              <span>Why Choose Us?</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-8 h-8 ml-3 text-primary"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </h1>
-            <p className="py-6">
-              Discover the exceptional benefits of our hostel management system:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Real-time tracking of room availability and allocation.</li>
-              <li>Streamlined student registration and record-keeping.</li>
-              <li>Seamless payment processing and transaction history.</li>
-              <li>Automated notifications for dues and updates.</li>
-              <li>Improved security with detailed resident profiles.</li>
-              <li>Comprehensive reporting and analytics tools.</li>
-            </ul>
-            <button className="btn btn-primary mt-6">Learn More</button>
-          </div>
+        {/* Benefits Grid */}
+        <div className="mt-8 grid md:grid-cols-3 gap-6">
+          {benefits.map((item, index) => (
+            <div
+              key={index}
+              className="p-6 bg-white rounded-xl shadow-md flex flex-col items-center hover:shadow-lg transition-all"
+            >
+              {item.icon}
+              <h3 className="text-xl font-semibold mt-4">{item.title}</h3>
+              <p className="text-gray-600 text-sm text-center mt-2">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -56,7 +56,7 @@ export default function UpcomingMealCard({ items, user }) {
     <Helmet>
         <title> Hostel Management | Upcoming Meals</title>
       </Helmet>
-      <div className="ml-12 md:ml-0">
+      <div className="ml-12 md:ml-0 mt-24 ">
       <div>
         <div className="card card-compact bg-white w-80 shadow-xl rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
           <figure>

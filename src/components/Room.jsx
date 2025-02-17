@@ -20,7 +20,7 @@ export default function Room() {
   if(isLoading) return <Loading />
 
   return (
-    <div1 className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7'>
+    <div1 className='w-11/12 mx-auto mt-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7'>
       {
         rooms?.map((room)=><RoomCard key={room._id} roomData={room} />)
       }

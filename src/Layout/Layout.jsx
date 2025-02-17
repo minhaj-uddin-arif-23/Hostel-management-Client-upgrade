@@ -5,11 +5,11 @@ import Footer from '../footer/Footer'
 
 function Layout() {
   return (
-    <div className='w-full bg-[#ffffff]'> 
+    <div className='w-full bg-sky-50/15'> 
       <header className='w-full mx-auto bg-[#fef7f7] z-50  top-0 fixed'>
         <Navbar />
       </header>
-      <div className='w-11/12 mx-auto mt-28'>
+      <div className=''>
         <Outlet />
       </div>
       <div>

@@ -13,7 +13,7 @@ export default function UpComingmeals() {
     }
   })
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 gap-7 mt-10'>
+    <div className='w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 gap-7 mt-10'>
       {
         upcomingMeal?.map((meal)=><UpcomingMealCard  key={meal._id} items={meal}/>)
       }

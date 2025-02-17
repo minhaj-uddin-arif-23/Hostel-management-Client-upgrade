@@ -11,7 +11,7 @@ function SubscriptionPlans() {
   };
   return (
     // TODO pass the price in props to pay money
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto">
       {/* Silver Plan */}
       <div className="card bg-gray-100 w-80 shadow-lg border border-gray-300">
         <div className="card-body text-center">

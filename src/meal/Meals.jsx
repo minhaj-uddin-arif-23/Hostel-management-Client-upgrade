@@ -32,7 +32,7 @@ export default function Meals() {
       <Helmet>
         <title> Hostel Management | Meals</title>
       </Helmet>
-      <div className="flex flex-col md:flex-row justify-between mr-20">
+      <div className="flex flex-col md:flex-row justify-between mr-20 w-11/12 mx-auto mt-28">
         {/* search */}
         <div className="mb-4 md:mb-0">
           {/* <span className="">Search Favourite Meal</span> */}
@@ -84,7 +84,7 @@ export default function Meals() {
         </div>
       </div>
              
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-7 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-7 mt-10 w-11/12 mx-auto">
         {meals?.map((item) => (   
           <MealCard key={item._id} items={item} />
         ))}

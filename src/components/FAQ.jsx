@@ -43,7 +43,7 @@ function FAQ() {
   return (
     <div>
       <div>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero shadow-md min-h-screen">
   <div className="hero-content flex-col lg:flex-row">
     <img
       src={faq}

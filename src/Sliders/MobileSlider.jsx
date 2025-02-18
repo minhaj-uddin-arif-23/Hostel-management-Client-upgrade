@@ -111,7 +111,7 @@ export default function MobileSlider() {
               </div>
             </div>
           </div>
-          <button className="btn btn-primary mt-6">Download the App</button>
+          {/* <button className="btn btn-primary mt-6">Download the App</button> */}
         </div>
 
         {/* Image Section */}

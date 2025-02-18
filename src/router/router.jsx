@@ -30,6 +30,7 @@ import UpComingmeals from "../components/UpComingmeals";
 import Room from "../components/Room";
 import RoomaddForm from "../Admin/RoomaddForm";
 import ErrorPage from "../Page/ErrorPage";
+import AdminDashboard from "../AdminDashboard/AdminDashboard";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +75,15 @@ export const router = createBrowserRouter([
       </PrivateRouter>
     ),
     children: [
+      //
+      {
+        path: "admindashboard",
+        element: (
+          <AdminRoute>
+            <AdminDashboard />
+          </AdminRoute>
+        ),
+      },
       {
         path: "addmeals",
         element: (
@@ -173,13 +183,12 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
       },
+      // https://hostel-managemet-server2.vercel.app
       {
         path: "updateItem/:id",
         element: <UpdateItem />,
         loader: ({ params }) =>
-          fetch(
-            `https://hostel-managemet-server2.vercel.app/meal-one-get/${params.id}`
-          ),
+          fetch(`http://localhost:8000/meal-one-get/${params.id}`),
       },
     ],
   },
@@ -212,7 +221,7 @@ export const router = createBrowserRouter([
     element: <Payment />,
   },
   {
-    path:'*',
-    element: <ErrorPage />
-  }
+    path: "*",
+    element: <ErrorPage />,
+  },
 ]);

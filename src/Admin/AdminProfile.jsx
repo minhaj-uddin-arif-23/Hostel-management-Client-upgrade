@@ -53,7 +53,7 @@ export default function AdminProfile() {
             <td className="p-4 text-gray-700 text-sm font-medium">{user?.displayName}</td>
             <td className="p-4">
               <img
-                src={adminprofile?.image}
+                src={user?.photoURL}
                 alt="Profile"
                 className="rounded-xl w-10 h-10 object-cover"
               />

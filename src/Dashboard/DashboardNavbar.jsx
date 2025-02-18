@@ -23,6 +23,15 @@ export default function DashboardNavbar() {
           <ul className="space-y-2 px-6">
             {isAdmin ? (
               <>
+               <li>
+                  <NavLink
+                    to={`admindashboard`}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <FaUser className="mr-3" />
+                    Dashboard
+                  </NavLink>
+                </li>
                 <li>
                   <NavLink
                     to={`adminprofile`}

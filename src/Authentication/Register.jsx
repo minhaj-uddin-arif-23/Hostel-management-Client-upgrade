@@ -5,6 +5,8 @@ import { FcGoogle } from "react-icons/fc";
 import register from "../assets/register.svg";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+
+import login from '../assets/login.svg'
 // import imageUpload from '../../ '
 // import { Helmet } from "react-helmet";
 // import { AuthContext } from "../Shared_Context/AuthProvider";
@@ -13,6 +15,7 @@ import { Helmet } from "react-helmet";
 import useAuth from "../Hook/useAuth";
 import { auth } from "../firebase/_firebase_init";
 import { imageUpload } from "./../Shared/Image_api";
+import AuthNavbar from "../Sliders/AuthNavbar";
 
 export default function Register() {
   const { google, createUser, updateUserInfo } = useAuth();
@@ -99,126 +102,89 @@ export default function Register() {
   //sign google and github
 
   return (
-    <div className="hero bg-base-200 min-h-screen py-10">
+    <>
+    <AuthNavbar />
+  
+    <div className="hero min-h-screen bg-green-50 flex items-center justify-center">
       <Helmet>
         <title>Register</title>
       </Helmet>
-      {/* <div className="flex flex-col lg:flex-row-reverse items-center justify-center"> */}
-      {/* Lottie Animation */}
-      <div className="w-full lg:w-1/2 flex justify-center">
-        <img src={register} className="w-700" alt="" />
-      </div>
-
-      {/* Registration Form */}
-      <div className="w-full lg:w-1/2 px-6">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          {/* Title */}
-          <h1 className="font-semibold text-4xl text-center text-gray-800 mb-4">
-            Register
-          </h1>
-
+  
+      <div className="w-full max-w-4xl mx-auto  rounded-lg overflow-hidden flex flex-col lg:flex-row">
+        {/* Left Side: Image */}
+       <div className="text-center md:w-1/2 lg:text-left w-full lg:w-1/2 flex justify-center lg:mr-28">
+              {/* <Lottie animationData={login} className="max-w-xs lg:max-w-sm" /> */}
+              <img src={register} alt="" className="w-[800px]" />
+              
+            </div>
+  
+        {/* Right Side: Registration Form */}
+        <div className="w-full lg:w-1/2 p-6 card bg-white">
+          <h1 className="font-bold text-3xl  text-center text-green-600 mb-3">Register</h1>
+  
           {/* Google Login Button */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4">
             <button
               onClick={handleGoogleLogin}
-              className="border-2 border-gray-300 text-2xl rounded-full flex items-center justify-center px-4 py-2 hover:bg-gray-100 transition"
+              className="border border-green-300 text-base rounded-md flex items-center px-3 py-2 hover:bg-green-100 transition"
             >
-              <FcGoogle className="text-3xl" />
-              <span className="ml-2 text-gray-600">Sign in with Google</span>
+              <FcGoogle className="text-2xl" />
+              <span className="ml-2 text-gray-700">Sign in with Google</span>
             </button>
           </div>
-
+  
           {/* Registration Form */}
-          <form onSubmit={handleRegister}>
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Name and Photo */}
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-lg">Name</span>
-                </label>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Username"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-lg">Image</span>
-                </label>
-                <input
-                  name="image"
-                  type="file"
-                  placeholder="Photo URL"
-                  className=""
-                  required
-                />
-              </div>
-
-              {/* Email and Password */}
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-lg">Email</span>
-                </label>
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control relative">
-                <label className="label">
-                  <span className="label-text text-lg">Password</span>
-                </label>
-                <input
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  className="input input-bordered"
-                  required
-                />
-                <div
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute top-2/3 right-3 transform -translate-y-1/2 cursor-pointer"
-                >
-                  {showPassword ? <FaEyeSlash /> : <FaEye />}
-                </div>
-              </div>
-            </section>
-
-            {/* Terms and Conditions */}
-            <div className="form-control mt-6">
-              <label className="label cursor-pointer flex items-center gap-2">
-                <input type="checkbox" name="checked" className="checkbox" />
-                <span className="label-text">Accept Terms & Conditions</span>
-              </label>
+          <form onSubmit={handleRegister} className="space-y-4">
+            <div className="form-control">
+              <label className="label text-sm text-gray-700">Name</label>
+              <input name="name" type="text" placeholder="Username" className="input input-md input-bordered focus:border-green-500" required />
             </div>
-
-            {/* Submit Button */}
-            <div className="form-control mt-4">
-              <button className="btn btn-success w-full">Sign Up</button>
+  
+            <div className="form-control">
+              <label className="label text-sm text-gray-700">Image</label>
+              <input name="image" type="file" className="file-input file-input-md file-input-bordered w-full focus:border-green-500" required />
             </div>
-
-            {/* Error Message */}
-            {errorMsg && (
-              <p className="text-red-500 mt-2 text-center">{errorMsg}</p>
-            )}
-
-            {/* Redirect to Login */}
-            <div className="mt-6 text-center">
-              <p className="mb-2">Already have an account?</p>
-              <Link to={`/login`} className="btn btn-outline btn-primary w-1/2">
+  
+            <div className="form-control">
+              <label className="label text-sm text-gray-700">Email</label>
+              <input name="email" type="email" placeholder="Enter your email" className="input input-md input-bordered focus:border-green-500" required />
+            </div>
+  
+            <div className="form-control relative">
+              <label className="label text-sm text-gray-700">Password</label>
+              <input name="password" type={showPassword ? "text" : "password"} placeholder="Enter your password" className="input input-md input-bordered focus:border-green-500 pr-10" required />
+              <div onClick={() => setShowPassword(!showPassword)} className="absolute top-[70%] right-3 transform -translate-y-1/2 cursor-pointer text-gray-600">
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </div>
+            </div>
+  
+            <div className="flex items-center gap-2">
+              <input type="checkbox" name="checked" className="checkbox checkbox-sm checkbox-success" />
+              <span className="text-sm text-gray-700">Accept Terms & Conditions</span>
+            </div>
+  
+            <div className="form-control">
+              <button className="btn btn-md bg-green-500 hover:bg-green-600 text-white font-semibold w-full">Sign Up</button>
+            </div>
+  
+            {errorMsg && <p className="text-red-500 text-sm text-center mt-2">{errorMsg}</p>}
+  
+            <div className="text-center mt-4">
+              <p className="text-sm text-gray-600">Already have an account? <span> <Link to={`/login`} className=" text-green-500 hover:bg-green-500  font-semibold ">
                 Sign In
-              </Link>
+              </Link></span>  </p>
+              
             </div>
           </form>
         </div>
       </div>
-      {/* </div> */}
     </div>
+  </>
+  
+  
+  
+  
+  
+  
   );
 }

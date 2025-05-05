@@ -11,12 +11,14 @@ export default function PaymentHistory() {
 
   const { data: paymentHistory = [], isLoading } = useQuery({
     queryKey: ['paymentHistory', user?.email],
+    enabled: !!user?.email, // only run query when user.email exists
     queryFn: async () => {
       const { data } = await axiosSecure.get(`/user/paymentHistory/${user?.email}`)
       return data
     },
-    enabled: !!user?.email, // only run query when user.email exists
+  
   })
+  console.log(paymentHistory)
 
   if (isLoading) return <Loading />
 
@@ -45,12 +47,12 @@ export default function PaymentHistory() {
           </thead>
 
           <tbody className='font-semibold text-[14px]'>
-            {paymentHistory.length > 0 ? (
-              paymentHistory.map((payment) => (
+            {paymentHistory?.length > 0 ? (
+              paymentHistory?.map((payment) => (
                 <tr className="bg-base-200" key={payment._id}>
                   <th>{user?.displayName}</th>
                   <td>{user?.email}</td>
-                  <td>{payment.plan}</td>
+                  <td>{payment?.plan}</td>
                   <td>{format(new Date(payment.date), 'MMMM dd, yyyy')}</td>
                 </tr>
               ))

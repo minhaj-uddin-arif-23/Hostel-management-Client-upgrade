@@ -1,6 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { FaUser, FaUtensils, FaListAlt, FaTasks, FaCalendarAlt, FaStar, FaUsers, FaHome } from "react-icons/fa";
+import {
+  FaUser,
+  FaUtensils,
+  FaListAlt,
+  FaTasks,
+  FaCalendarAlt,
+  FaUsers,
+  FaHome,
+} from "react-icons/fa";
 import { MdOutlineBathroom } from "react-icons/md";
 import { MdRateReview, MdPayment } from "react-icons/md";
 import useAdmin from "../Hook/useAdmin";
@@ -15,17 +23,23 @@ export default function DashboardNavbar() {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className={`w-64 bg-white border-r hidden lg:block ${isSidebarOpen ? 'block' : 'hidden'}`}>
-        <div className="p-6">
-          <h2 className="text-lg font-semibold text-gray-700">Admin Dashboard</h2>
-        </div>
+      <aside
+        className={`w-64 bg-white border-r hidden lg:block ${
+          isSidebarOpen ? "block" : "hidden"
+        }`}
+      >
         <nav>
           <ul className="space-y-2 px-6">
             {isAdmin ? (
               <>
-               <li>
+                <div className="p-3">
+                  <h2 className="text-xl font-semibold text-green-700">
+                    Admin Dashboard
+                  </h2>
+                </div>
+                <li>
                   <NavLink
-                    to={`admindashboard`}
+                    to={`/`}
                     className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
                   >
                     <FaUser className="mr-3" />
@@ -108,9 +122,14 @@ export default function DashboardNavbar() {
             ) : (
               // User-related routes
               <>
+                 <div className="p-3">
+                  <h2 className="text-xl font-semibold text-green-700">
+                    User Dashboard
+                  </h2>
+                </div>
                 <li>
                   <NavLink
-                    to={`myprofile`}
+                    to={`/`}
                     className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
                   >
                     <FaUser className="mr-3" />
@@ -147,113 +166,115 @@ export default function DashboardNavbar() {
               </>
             )}
             <>
-            
-            <li>
-              <NavLink
-                to={'/'}
-                className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-              >
-                <FaHome className="mr-3" />
-                Back To Home
-              </NavLink>
-            </li>
+              <li>
+                <NavLink
+                  to={"/"}
+                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                >
+                  <FaHome className="mr-3" />
+                  Back To Home
+                </NavLink>
+              </li>
             </>
           </ul>
         </nav>
       </aside>
 
       {/* Mobile Sidebar */}
-      <div className={`lg:hidden fixed top-0 left-0 bg-white shadow-md w-64 h-screen z-50 transition-transform transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div
+        className={`lg:hidden fixed top-0 left-0 bg-white shadow-md w-64 h-screen z-50 transition-transform transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
         <nav>
           <ul className="space-y-2 px-6 py-4">
             {/* Add similar nav items as above */}
-          {
-            isAdmin ? (
+            {isAdmin ? (
               <>
-              <li>
-                <NavLink
-                  to={`adminprofile`}
-                  onClick={closeSidebar}
-                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-                >
-                  <FaUser className="mr-3" />
-                  Admin Profile
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`addmeals`}
-                  onClick={closeSidebar}
-                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-                >
-                  <FaUtensils className="mr-3" />
-                  Add Meal
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`allmeals`}
-                  onClick={closeSidebar}
-                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-                >
-                  <FaListAlt className="mr-3" />
-                  All Meals
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`servemeals`}
-                  onClick={closeSidebar}
-                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-                >
-                  <FaTasks className="mr-3" />
-                  Serve Meals
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`upcomingmeals`}
-                  onClick={closeSidebar}
-                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-                >
-                  <FaCalendarAlt className="mr-3" />
-                  Upcoming Meals
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`allreviews`}
-                  onClick={closeSidebar}
-                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-                >
-                  <MdRateReview className="mr-3" />
-                  All Reviews
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`manageusers`}
-                  onClick={closeSidebar}
-                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-                >
-                  <FaUsers className="mr-3" />
-                  Manage Users
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`addroom`}
-                  onClick={closeSidebar}
-                  className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
-                >
-                  <MdOutlineBathroom className="mr-3" />
-                  Add Room
-                </NavLink>
-              </li>
-            </>
+                <li>
+                  <NavLink
+                    to={`adminprofile`}
+                    onClick={closeSidebar}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <FaUser className="mr-3" />
+                    Admin Profile
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`addmeals`}
+                    onClick={closeSidebar}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <FaUtensils className="mr-3" />
+                    Add Meal
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`allmeals`}
+                    onClick={closeSidebar}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <FaListAlt className="mr-3" />
+                    All Meals
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`servemeals`}
+                    onClick={closeSidebar}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <FaTasks className="mr-3" />
+                    Serve Meals
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`upcomingmeals`}
+                    onClick={closeSidebar}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <FaCalendarAlt className="mr-3" />
+                    Upcoming Meals
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`allreviews`}
+                    onClick={closeSidebar}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <MdRateReview className="mr-3" />
+                    All Reviews
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`manageusers`}
+                    onClick={closeSidebar}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <FaUsers className="mr-3" />
+                    Manage Users
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`addroom`}
+                    onClick={closeSidebar}
+                    className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
+                  >
+                    <MdOutlineBathroom className="mr-3" />
+                    Add Room
+                  </NavLink>
+                </li>
+              </>
             ) : (
               <>
-              <li>
+                <li>
                   <NavLink
                     to={`myprofile`}
                     onClick={closeSidebar}
@@ -294,13 +315,11 @@ export default function DashboardNavbar() {
                   </NavLink>
                 </li>
               </>
+            )}
 
-            )
-          }
-            
             <li>
               <NavLink
-                to={'/'}
+                to={"/"}
                 className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
               >
                 <FaHome className="mr-3" />
@@ -317,7 +336,7 @@ export default function DashboardNavbar() {
         onClick={toggleSidebar}
         className="lg:hidden fixed top-4 left-4 bg-blue-500 text-white p-2 rounded-md"
       >
-        {isSidebarOpen ? 'Close Menu' : 'Open Menu'}
+        {isSidebarOpen ? "Close Menu" : "Open Menu"}
       </button>
 
       {/* Main Content */}

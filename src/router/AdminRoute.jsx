@@ -1,7 +1,8 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 import useAuth from "../Hook/useAuth";
 import useAdmin from "../Hook/useAdmin";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 function AdminRoute({ children }) {
   const { user, loading } = useAuth();

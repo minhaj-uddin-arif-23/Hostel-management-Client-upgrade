@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
     children: [
       //
       {
-        path: "admindashboard",
+       index:true,
         element: (
           <AdminRoute>
             <AdminDashboard />
@@ -152,7 +152,8 @@ export const router = createBrowserRouter([
       },
       // * user related navbar
       {
-        path: "myprofile",
+        // path: "myprofile",
+        index:true,
         element: (
           <PrivateRouter>
             <MyProfile />

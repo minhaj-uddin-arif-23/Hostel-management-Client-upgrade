@@ -67,12 +67,12 @@ export default function AddMeal() {
          <Helmet>
       <title>Hostel Management | Add Meal</title>
     </Helmet>
-    <div className="text-center space-y-2 bg-gradient-to-r from-lime-200 via-emerald-200 to-teal-200 p-6 rounded-lg shadow-lg">
+    <div className="text-center space-y-2 bg-gradient-to-r  p-6 rounded-lg shadow-lg">
   <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-    What's Trending
+    What&apos;s Trending
   </h1>
-  <p className="text-4xl text-gray-700 font-semibold ">
-    Add Meal
+  <p className="text-3xl text-green-800 font-semibold ">
+  Please add your favourite  meal
   </p>
 </div>
 
@@ -90,7 +90,7 @@ export default function AddMeal() {
                 {...register("title", { required: true })}
                 type="text"
                 placeholder="Meal name"
-                className="input input-info w-full "
+                className="input input-accent w-full "
               />
             </label>
           </div>
@@ -102,7 +102,7 @@ export default function AddMeal() {
               </div>
               <select
                 defaultValue="default"
-                className="select select-primary w-full "
+                className="select select-accent w-full "
                 {...register("category", { required: true })}
               >
                 <option disabled value="default">
@@ -127,7 +127,7 @@ export default function AddMeal() {
                 placeholder="email"
                 defaultValue={user?.email}
                 readOnly
-                className="input input-info w-full "
+                className="input input-accent w-full "
               />
             </label>
           </div>
@@ -140,7 +140,7 @@ export default function AddMeal() {
               </div>
               <textarea
                 {...register("details")}
-                className="textarea textarea-info"
+                className="textarea textarea-accent"
                 placeholder="Meal details"
               ></textarea>
             </label>
@@ -156,7 +156,7 @@ export default function AddMeal() {
                 {...register("price", { required: true })}
                 type="number"
                 placeholder="price"
-                className="input input-info w-full "
+                className="input input-accent w-full "
               />
             </label>
             {/* admin name */}
@@ -171,7 +171,7 @@ export default function AddMeal() {
                   placeholder="name"
                   defaultValue={user?.displayName}
                   readOnly
-                  className="input input-info w-full "
+                  className="input input-accent w-full "
                 />
               </label>
             </div>
@@ -190,14 +190,14 @@ export default function AddMeal() {
                   {...register("ingredients", { required: true })}
                   type="text"
                   placeholder="recipe name"
-                  className="input input-info w-full "
+                  className="input input-accent w-full "
                 />
               </label>
               {/* date */}
               <div className="form-control mt-9 w-1/2">
                 <DatePicker
                   selected={startDate}
-                  className="input input-bordered input-success w-full"
+                  className="input input-bordered input-accent w-full"
                   onChange={(date) => setStartDate(date)} //only when value has changed
                 />
               </div>
@@ -210,12 +210,12 @@ export default function AddMeal() {
               <input
                 type="file"
                 {...register("image")}
-                className="file-input file-input-bordered file-input-warning w-full max-w-xs"
+                className="file-input file-input-bordered file-input-success w-full max-w-xs"
               />
             </div>
             {/* add button */}
-            <button className="btn mt-4">
-              Add Meal <FaUtensils className="ml-4" />
+            <button className="btn mt-4 bg-green-700 text-white">
+            <FaUtensils className="" />  Add Meal 
             </button>
           </div>
         </form>

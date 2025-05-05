@@ -5,6 +5,7 @@ import useAxiosPublic from "../Hook/useAxiosPublic";
 import Loading from "../components/Loading";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet";
+import MealBanner from "./MealBanner";
                                          
 export default function Meals() {
   const axiosPublic = useAxiosPublic();
@@ -32,7 +33,10 @@ export default function Meals() {
       <Helmet>
         <title> Hostel Management | Meals</title>
       </Helmet>
-      <div className="w-11/12 mx-auto mt-28 space-y-6 md:space-y-0 md:flex md:items-center md:justify-between flex-col md:flex-row">
+      <div>
+        <MealBanner />
+      </div>
+      <div className="w-11/12 mx-auto mt-28 space-y-6 md:space-y-0 md:flex md:items-center md:justify-between flex-col md:flex-row" id="all-meals">
   {/* Search */}
   <div className="w-full md:w-auto">
     <input
@@ -82,7 +86,6 @@ export default function Meals() {
     </div>
   </div>
 </div>
-
              
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-7 mt-10
 

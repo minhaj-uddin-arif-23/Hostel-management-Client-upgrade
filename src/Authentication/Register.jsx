@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { GoogleAuthProvider } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
@@ -6,7 +6,7 @@ import register from "../assets/register.svg";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import login from '../assets/login.svg'
+
 // import imageUpload from '../../ '
 // import { Helmet } from "react-helmet";
 // import { AuthContext } from "../Shared_Context/AuthProvider";

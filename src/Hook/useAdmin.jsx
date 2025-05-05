@@ -12,7 +12,7 @@ export default function useAdmin() {
     queryFn: async () => {
       const res = await axiosSequre.get(`/user/admin/${user?.email}`);
       // console.log(res.data);
-      return res.data?.admin;
+      return res?.data?.admin;
     },
   });
   return [isAdmin,isAdminPending];

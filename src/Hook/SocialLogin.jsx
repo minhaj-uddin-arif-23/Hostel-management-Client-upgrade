@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { FaGoogle } from 'react-icons/fa'
 
 import toast from 'react-hot-toast'

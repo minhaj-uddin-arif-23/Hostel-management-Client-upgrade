@@ -92,20 +92,20 @@ function MealDetails() {
       if (res.data?.success === true ) {
         toast.success("Your meal request is pending");
       } else {
-        toast.error( "Failed to add meal request");
+        toast.error( "Failed to add meal request!");
       }
     } catch (error) {
       console.error(error);
-      toast.error("You have no subscription ");
+      toast.error("You have no subscription!");
     }
   };
   
 
   const handleToast = () => {
-    toast.error("Sorry you are  admin");
+    toast.error("Sorry you are  admin!");
   };
   const handleMealRequest = () => {
-    toast.error("Sorry you are  admin");
+    toast.error("Sorry you are  admin!");
   };
 
   //    * like if he/she is admin

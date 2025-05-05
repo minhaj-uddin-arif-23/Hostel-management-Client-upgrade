@@ -46,7 +46,7 @@ export default function PaymentHistory() {
             </tr>
           </thead>
 
-          <tbody className='font-semibold text-[14px]'>
+          <tbody className='font-semibold text-[13px]'>
             {paymentHistory?.length > 0 ? (
               paymentHistory?.map((payment) => (
                 <tr className="bg-base-200" key={payment._id}>

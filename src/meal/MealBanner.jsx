@@ -19,7 +19,7 @@ export default function MealBanner() {
                 Streamline your hostel meal planning and distribution. From
                 breakfast to dinner, keep track of every student preferences,
                 ensure timely servings, and reduce food waste — all in one
-                place.
+                place..
               </p>
 
              <a href="#all-meals"> <button className="btn btn-green px-6 py-2 text-lg font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300">See All Meal</button></a>

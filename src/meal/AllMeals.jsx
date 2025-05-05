@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import useMeal from "../Hook/useMeal";
 import MealCard from "./MealCard";
 import InfiniteScroll from "react-infinite-scroll-component";

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import useMeal from "../Hook/useMeal";
+import  { useState } from "react";
+// import useMeal from "../Hook/useMeal";
 import MealCard from "./MealCard";
 import useAxiosPublic from "../Hook/useAxiosPublic";
 import Loading from "../components/Loading";
@@ -15,7 +15,7 @@ export default function Meals() {
   const {
     data: meals = [],   
     isLoading,    
-    refetch,
+    // refetch,
   } = useQuery({
     queryKey: ["meals", filter, search,minPrice,maxPrice],
     queryFn: async () => {     
@@ -32,59 +32,61 @@ export default function Meals() {
       <Helmet>
         <title> Hostel Management | Meals</title>
       </Helmet>
-      <div className="flex flex-col md:flex-row justify-between mr-20 w-11/12 mx-auto mt-28">
-        {/* search */}
-        <div className="mb-4 md:mb-0">
-          {/* <span className="">Search Favourite Meal</span> */}
-          <input
-            onChange={(e) => setSearch(e.target.value)}
-            type="text"
-            placeholder="Type your favourite Meal"
-            className="input input-bordered input-info w-full max-w-xs ml-8 md:ml-0"
-          />
-        </div>
-        {/* category */}
-        <div>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-            <div className="flex items-center gap-2">
-              <span className="mt-2 font-semibold">Min</span>
-              <input
-                type="number"
-                placeholder="Min Price"
-                value={minPrice}
-                onChange={(e) => setMinPrice(e.target.value)}
-                className="input input-bordered input-info w-full max-w-xs"
-              />
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="mt-2 font-semibold">Max</span>
-              <input
-                type="number"
-                placeholder="Max Price"
-                onChange={(e) => setMaxPrice(e.target.value)}
-                value={maxPrice}
-                className="input input-bordered input-info w-full max-w-xs"
-              />
-            </div>
-            <div className="flex items-center gap-2 ml-7 md:ml-0">
-              <select
-                className="select select-primary w-full font-semibold"
-                onChange={(e) => setFilter(e.target.value)}
-              >
-                <option disabled value="default">
-                  Select a category
-                </option>
-                <option value="Breakfast">Breakfast</option>
-                <option value="Launch">Launch</option>
-                <option value="Dinner">Dinner</option>
-                <option value="All Meals">All Meals</option>
-              </select>
-            </div>
-          </div>
-        </div>
+      <div className="w-11/12 mx-auto mt-28 space-y-6 md:space-y-0 md:flex md:items-center md:justify-between flex-col md:flex-row">
+  {/* Search */}
+  <div className="w-full md:w-auto">
+    <input
+      onChange={(e) => setSearch(e.target.value)}
+      type="text"
+      placeholder="Type your favourite Meal"
+      className="input input-bordered input-info w-full max-w-xs "
+    />
+  </div>
+
+  {/* Filters */}
+  <div className="w-full md:w-auto">
+    <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap md:flex-nowrap md:gap-6">
+      {/* Min Price */}
+      <div className="flex items-center gap-2">
+        <input
+          type="number"
+          placeholder="Min Price"
+          onChange={(e) => setMinPrice(e.target.value)}
+          className="input input-bordered input-info w-full max-w-xs  md:ml-5"
+        />
       </div>
+
+      {/* Max Price */}
+      <div className="flex items-center gap-2">
+        <input
+          type="number"
+          placeholder="Max Price"
+          onChange={(e) => setMaxPrice(e.target.value)}
+          className="input input-bordered input-info w-full max-w-xs"
+        />
+      </div>
+
+      {/* Category Select */}
+      <div className="flex items-center gap-2">
+        <select
+          className="select select-info w-full max-w-xs font-semibold"
+          onChange={(e) => setFilter(e.target.value)}
+        >
+          <option disabled value="default">Select a category</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Launch">Launch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="All Meals">All Meals</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
              
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-7 mt-10 w-11/12 mx-auto">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-7 mt-10
+
+">
         {meals?.map((item) => (   
           <MealCard key={item._id} items={item} />
         ))}

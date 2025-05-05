@@ -1,7 +1,4 @@
-import React from "react";
-import Loading from "../components/Loading";
-// import { Slider } from "../Landing_page/Slider";
-import ContactForm from "../components/ContactForm";
+
 import FAQ from "../components/FAQ";
 import MealTab from "../meal/MealTab";
 import Upgrating from "../components/Upgrating";

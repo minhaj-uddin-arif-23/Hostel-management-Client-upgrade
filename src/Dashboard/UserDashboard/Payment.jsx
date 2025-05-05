@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Checkout from "./Checkout";
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PK_KEY);
+// eslint-disable-next-line react/prop-types
 export default function Payment({ plan, price }) {
 
   return (

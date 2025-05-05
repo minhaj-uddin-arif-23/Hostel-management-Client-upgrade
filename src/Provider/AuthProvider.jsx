@@ -1,9 +1,10 @@
-import React, { createContext, useEffect, useState } from "react";
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
+import  { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
-  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,

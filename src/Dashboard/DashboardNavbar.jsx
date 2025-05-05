@@ -129,7 +129,7 @@ export default function DashboardNavbar() {
                 </div>
                 <li>
                   <NavLink
-                    to={`/`}
+                    to={``}
                     className="flex items-center p-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-md"
                   >
                     <FaUser className="mr-3" />

@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
 import useAxiosPublic from '../Hook/useAxiosPublic'
 import RoomCard from './RoomCard'
 import Loading from './Loading'
+import AddRoomBanner from './AddRoomBanner'
 
 export default function Room() {
 
@@ -20,10 +20,15 @@ export default function Room() {
   if(isLoading) return <Loading />
 
   return (
+   <div>
+    <div>
+          <AddRoomBanner />
+    </div>
     <div1 className='w-11/12 mx-auto mt-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7'>
       {
         rooms?.map((room)=><RoomCard key={room._id} roomData={room} />)
       }
     </div1>
+   </div>
   )
 }

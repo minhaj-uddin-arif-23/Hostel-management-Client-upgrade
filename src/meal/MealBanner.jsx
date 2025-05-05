@@ -12,7 +12,7 @@ export default function MealBanner() {
           <div className="hero-overlay"></div>
           <div className="hero-content text-neutral-content text-center">
             <div className="max-w-md">
-              <h1 className="mb-5 text-4xl font-bold">
+              <h1 className="mb-5 text-5xl font-bold">
                 Manage <span className="text-green-200">meals</span> with ease
               </h1>
               <p className="mb-5">

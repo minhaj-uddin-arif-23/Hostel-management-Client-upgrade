@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaUtensils } from "react-icons/fa6";
 import DatePicker from "react-datepicker";
@@ -68,7 +68,7 @@ export default function AddMeal() {
       <title>Hostel Management | Add Meal</title>
     </Helmet>
     <div className="text-center space-y-2 bg-gradient-to-r  p-6 rounded-lg shadow-lg">
-  <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+  <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-950 to-green-900">
     What&apos;s Trending
   </h1>
   <p className="text-3xl text-green-800 font-semibold ">
